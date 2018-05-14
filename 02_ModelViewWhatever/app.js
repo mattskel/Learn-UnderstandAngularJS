@@ -6,8 +6,7 @@
 //    
 //}]);
 
-//console.log($("h1").attr("ng-reply"));
-
-var person = 'Matt';
-stevesApp.person = person;
-stevesApp.logPerson();
+var myApp = angular.module('myApp', []);
+myApp.controller('mainController',function() {
+    
+});
