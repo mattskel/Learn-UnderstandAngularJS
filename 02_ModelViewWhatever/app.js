@@ -6,7 +6,8 @@
 //    
 //}]);
 
-console.log($("h1").attr("ng-reply"));
+//console.log($("h1").attr("ng-reply"));
 
-
-
+var person = 'Matt';
+stevesApp.person = person;
+stevesApp.logPerson();
