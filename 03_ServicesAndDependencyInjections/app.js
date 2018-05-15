@@ -6,21 +6,15 @@
 //    
 //}]);
 
-var myApp = angular.module('myApp', []);
-myApp.controller('mainController',function() {
-    
-});
-
-var Person = function (firstname, lastname) {
+var Person = function(firstname, lastname) {
     this.firstname = firstname;
     this.lastname = lastname;
 }
 
-function logPerson(person) {
-    var john = new Person('John','Doe');
+function logPerson (person) {
     console.log(person);
 }
 
 var john = new Person('John','Doe');
-
 logPerson(john);
+
