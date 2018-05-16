@@ -2,19 +2,9 @@
 var myApp = angular.module('myApp', ['ngMessages', 'ngResource']);
 
 // CONTROLLERS
-myApp.controller('mainController', function ($scope, $log, $filter, $resource) {
-//    console.log($log);
-//    $log.log('Hello');
-//    $log.info('This is info');
-//    $log.warn('Warning');
-//    $log.debug('Debug info');
-//    $log.error('ERROR');
-//    $scope.name = 'John';
-//    $scope.formattedname = $filter('uppercase')($scope.name);
-//    
-//    $log.info($scope.name);
-//    $log.info($scope.formattedname);
-    
-    console.log($resource);
-});
+myApp.controller('mainController', ['$scope','$log',function ($scope, $log) {
+    $log.info($scope);
+}]);
+// THis can be minified and still used
+// It does mean we can't play around with the order we pass the parameters
 
