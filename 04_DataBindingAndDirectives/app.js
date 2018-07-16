@@ -10,18 +10,12 @@ angularApp.controller('mainController', ['$scope', '$filter', function ($scope, 
     
   };
   
-  $scope.$watch('handle', function(newValue, oldValue) {
-    console.info('Changed!');
-    console.log('Old: ' + oldValue);
-    console.log('New: ' + newValue);
-  });
-  
-  setTimeout(function() {
-    $scope.$apply(function() {
-      $scope.handle = 'newTwitterHandle';
-      console.log('Scope changed');
-    });
-  }, 3000);
+  $scope.characters = 5;
+  $scope.rules = [
+    {rulename: "Must be 5 characters"},
+    {rulename: "Must not be used elsewhere"},
+    {rulename: "Must be cool"}
+  ];
 }]);
 
 
