@@ -11,6 +11,10 @@ angularApp.config(function($routeProvider) {
       templateUrl: 'pages/second.html',
       controller: 'secondController'
     })
+    .when('/second/:num', {
+      templateUrl: 'pages/second.html',
+      controller: 'secondController'
+    })
 })
 
 // CONTROLLERS
@@ -19,8 +23,9 @@ angularApp.controller('mainController', ['$scope', '$location', '$log', function
     $scope.name = 'Main';
 }]);
 
-angularApp.controller('secondController', ['$scope', '$location', '$log', function ($scope, $location, $log) {
+angularApp.controller('secondController', ['$scope', '$location', '$log', '$routeParams', function ($scope, $location, $log, $routeParams) {
   $scope.name = 'Second';
+  $scope.num = $routeParams.num || 1;
 }]);
 
 
