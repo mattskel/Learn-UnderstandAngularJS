@@ -17,10 +17,20 @@ angularApp.config(function($routeProvider) {
     })
 })
 
+angularApp.service('nameService', function() {
+  var self = this;
+  this.name = 'John Doe';
+  this.nameLength = function() {
+    return self.name.length;
+  }
+})
+
 // CONTROLLERS
-angularApp.controller('mainController', ['$scope', '$location', '$log', function ($scope, $location, $log) {
-//  $log.info($location.path());
-    $scope.name = 'Main';
+angularApp.controller('mainController', ['$scope', '$location', '$log', 'nameService', function ($scope, $location, $log, nameService) {
+  $scope.name = 'Main';
+  $log.log(nameService.name);
+  $log.log(nameService.nameLength());
+                                         
 }]);
 
 angularApp.controller('secondController', ['$scope', '$location', '$log', '$routeParams', function ($scope, $location, $log, $routeParams) {
